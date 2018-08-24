@@ -1,0 +1,2912 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+// helper styles
+
+.mobile-error-btn
+	display: none
+	width: 515px
+	position: relative
+	top: -52px
+	left: 0px
+	margin: 0 auto
+	
+	
+
+::placeholder
+	color: rgba(69, 57, 57, 0.5)
+
+::selection
+	background-color: $accent
+	color: #fff
+
+a
+	outline: none
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+	&:focus
+		text-decoration: none
+	&:active
+		text-decoration: none		
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.clearfix::after
+	content: ""
+	clear: both
+	display: table
+
+.text-center
+	text-align: center
+
+.text-right
+	text-align: right	
+
+.text-left
+	text-align: left
+
+b, strong
+	font-weight: bold
+
+.logo-responsive
+	display: none
+
+.fix-overflow-all
+	overflow: hidden
+header
+	padding: 35px 0 31px 0
+	position: fixed
+	width: 100%
+	top: 0
+	left: 0
+	background-color: #fff
+	z-index: 4
+	.logo
+		display: inline-block
+		margin-left: 85px
+		margin-right: 75px	
+	.navigation
+		&__left
+			.navigation-visible
+				list-style-type: none
+				display: inline-block
+				ul
+					padding: 0
+					margin: 0 0 0 -6px
+					li
+						display: inline-block
+						margin-right: 50px
+						a
+							font-family: $bold, sans-serif
+							color: #645757
+							font-size: 14px
+							transition: all .9s ease
+							letter-spacing: 0.5px
+							text-decoration: none
+							&:hover
+								color: #ccb6a6
+								text-decoration
+							&:active
+								color: #ccb6a6
+								text-decoration
+							&:focus
+								color: #ccb6a6
+								text-decoration	
+		&__right
+			text-align: right
+			.phone
+				font-family: $bold
+				font-size: 16px
+				color: #645757
+				display: inline-block
+				margin-right: 45px
+			.hamburger
+				outline: none
+				padding: 0
+				position: relative
+				top: 5px
+				margin-right: 87px
+				.hamburger-box
+					width: 24px
+					height: 20px
+					transition: all .10s ease
+					&:hover
+						.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+							background-color: #ccb6a6 
+					.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+						width: 24px
+						height: 2px
+						background-color: #645757	
+
+.popup-menu
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	background-color: rgba(53, 48, 49, 0.8)
+	z-index: 3
+	display: none
+	.popup-right-menu
+		background-color: #fff
+		width: 940px
+		height: 100%
+		position: fixed
+		right: 0
+		top: 0
+		overflow-y: scroll
+		&::-webkit-scrollbar 
+			display: none
+		.unathorized-menu
+			padding-top: 138px 
+			padding-left: 105px
+			padding-right: 105px
+			.sub-nav
+				ul
+					padding: 0
+					margin: 55px 0 0 25px
+					list-style-type: none
+					display: inline-block
+					li
+						margin-bottom: 35px
+						&:last-child
+							margin-bottom: 0
+						a
+							color: #645757
+							font-family: $bold
+							font-size: 22px
+							transition: all .9s ease
+							text-decoration: none
+							position: relative
+						&:hover
+							a
+								left: 10px
+								color: #ccb6a6
+								text-decoration: none
+			p
+				color: #645757
+				font-size: 14px
+				line-height: 30px
+				margin-top: 100px
+				margin-left: 25px
+			.phone-socials
+				margin-left: 25px
+				span
+					display: block
+					color: #645757
+					font-size: 14px
+					&:first-child
+						margin-bottom: 13px
+				.social-icons
+					display: inline-block
+					list-style-type: none
+					margin-top: 30px	
+					li
+						display: inline-block
+						margin-right: 25px							
+
+.contact
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 3
+	height: 100%
+	width: 72px
+	background-color: #fff
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	&__item
+		padding: 40px 0
+		text-align: center
+		position: relative
+		&:first-child
+			&::before
+				display: none
+		&::before
+			content: ""
+			width: 16px
+			height: 1px
+			background-color: #C0BEBF
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)	
+		a
+			color: #1daadc
+			font-size: 10px
+			word-break: break-word
+			font-family: $bold
+			line-height: 12px
+			display: block
+			margin-bottom: 20px
+			&:hover
+				text-decoration: none
+			span
+				display: block
+				text-align: center
+				margin-bottom: 7px
+			&.lang
+				font-size: 14px
+				font-family: $bold
+				color: #2e282a
+				text-decoration	
+
+.slider
+	&-home
+		margin-top: 90px
+		.controls-prev, .controls-next
+			position: absolute
+			bottom: 0
+			right: 48px
+			padding: 20px
+			background-color: #fff
+			z-index: 1
+			transition: all .10s ease
+			&:hover
+				background-color: #CCB6A6
+		.controls-next
+			right: 0		
+		.slide
+			margin-right: 10px
+			position: relative
+			.play-button
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: 50%
+				display: inline-block
+				outline: none
+			&__description
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				padding-bottom: 40px
+				background: linear-gradient(to top, rgba(100, 87, 87, 0.78), rgba(100, 87, 87, 0.01))
+				h2
+					color: #ffffff
+					font-size: 40px
+					font-family: $bold
+					.availible-year
+						display: inline-block
+						background-color: #58965B
+						padding: 7px 6px
+						color: #fff
+						font-family: $bold
+						font-size: 14px
+						border-radius: 4px
+						position: relative
+						top: -5px
+						margin-left: 22px
+				.today
+					color: #fff
+					font-family: $default-font
+					font-size: 22px
+					display: inline-block
+					margin-right: 32px
+					background-color: transparent
+				.other-dates
+					color: #efe2af
+					font-size: 12px
+					font-family: $bold
+					position: relative
+					top: -1px
+					outline: none
+					text-decoration: none
+					img
+						display: inline-block
+						margin-left: 10px		
+				.availible-sessions
+					list-style-type: none
+					margin: 20px 0 0 0
+					padding: 0
+					li
+						display: inline-block
+						margin-right: 20px
+						a
+							padding: 10px
+							color: #645757
+							border-radius: 4px
+							background-color: #fff
+							font-size: 16px
+							font-family: $bold
+							transition: all .9s ease
+							&:hover
+								background-color: #CCB6A6
+								text-decoration: none
+								color: #fff
+							&.passed
+								background-color: transparent
+								text-decoration: line-through
+								color: #898279
+
+
+.actions
+	background-color: #EBEBEB
+	padding: 100px 0
+	.actions-item
+		background-color: #fff
+		position: relative
+		h3
+			font-size: 30px
+			color: #453939
+			font-family: $bold
+			line-height: 40px
+			margin-top: 185px
+			margin-bottom: 35px
+			padding: 0 10px
+			&:hover
+				color: #CCB6A6
+		p
+			font-size: 16px
+			color: #645757
+			margin: 0 0 30px 0
+			padding-left: 10px	
+		.actions-link
+			font-size: 12px
+			color: #b2a097
+			text-transform: uppercase
+			font-family: $bold
+			position: absolute
+			top: 35px
+			right: 50px	
+
+.soon
+	background-color: #F6F4F3
+	padding: 100px 0
+	.slider-soon-wrapper
+		position: relative
+		h4
+			color: #a7978a
+			font-size: 24px
+			font-family: Myriad Pro, sans-serif
+			line-height: 28px
+			position: absolute
+			top: 90px
+			left: -145px
+			transform: rotate(-90deg)
+			font-weight: 400
+		.soon-item
+			outline: none
+			&:hover
+				.image
+					.movie-name
+						bottom: 0
+			.image
+				position: relative
+				text-align: center
+				overflow: hidden
+				width: 275px
+				img
+					display: inline-block
+				.play-button
+					position: absolute
+					top: 42%
+					left: 50%
+					transform: translate(-50%)
+				.movie-name
+					position: absolute
+					bottom: -100%
+					left: 0
+					padding: 27px 0	
+					width: 100%
+					font-size: 14px
+					text-transform: uppercase
+					font-family: $bold
+					background-color: #fff
+					text-align: center
+					transition: all .6s ease	
+			.info
+				margin-top: 10px
+				.from
+					font-family: $bold
+					color: #645757		
+				img
+					display: inline-block
+					margin-right: 23px
+
+.image-action
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-size: cover
+	background-position: center
+
+.slider-soon
+	position: relative
+	.controls-prev, .controls-next
+		position: absolute
+		right: -50px
+		padding: 20px
+		background-color: #fff
+	.controls-prev
+		bottom: 0
+	.controls-next
+		bottom: 40px
+
+.palladium-club
+	padding-bottom: 60px
+	h2
+		margin: 0
+		padding: 47px 0
+		color: #453939
+		font-family: $bold
+	.cards
+		.card-item
+			img
+				margin-bottom: 15px
+			h3
+				margin: 0 0 35px 0
+				font-family: $bold
+				color: #645757
+				font-size: 12px
+				text-transform: uppercase
+				position: relative	
+				&::after
+					content: ""
+					position: absolute
+					bottom: -20px
+					left: 50%
+					width: 2px
+					height: 10px
+				&.gold
+					&::after
+						background-color: #CCBB9A
+				&.silver
+					&::after
+						background-color: #A5A7AA
+				&.red
+					&::after
+						background-color: #EC1355
+				&.blue
+					&::after
+						background-color: #2A2F63
+				&.green
+					&::after
+						background-color: #27BDBE									
+			p
+				margin: 0 0 0 0
+				font-size: 12px
+				font-family: $default-font
+				line-height: 20px
+				color: #645757				
+
+.about-cinema
+	background-color: #F6F4F3
+	.cinema-text
+		margin-left: 50px
+		margin-top: 80px
+		h1
+			font-size: 30px
+			font-family: $bold
+			line-height: 40px
+			color: #453939
+		.scrollable-wrapper
+			position: relative
+			margin-top: 40px
+			&::after
+				content: ""
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 48px
+				background-image: url("../img/about-cinema-bottom.png")
+				background-repeat: no-repeat
+				background-position: center
+				background-size: 100%
+			.scrollable-text
+				height: 300px
+				overflow-y: scroll
+				max-width: 550px
+				position: relative
+				padding-right: 43px
+				&::-webkit-scrollbar
+					width: 2px
+				&::-webkit-scrollbar-track
+					background-color: #EBEBEB
+					width: 2px 
+				&::-webkit-scrollbar-thumb
+					background-color: #2E282A		
+				p
+					color: #645757
+					font-size: 14px
+					line-height: 26px
+					margin-top: 35px
+					&:first-child
+						margin-top: 0
+	.illustration
+		position: absolute;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover
+		width: 100%;				
+			
+footer
+	position: relative
+	padding: 100px 0
+	background-image: url("../img/footer.jpg")
+	background-position: center
+	background-size: cover
+	overflow: hidden
+	h5
+		color: #fff
+		font-family: $bold
+		font-size: 26px
+		margin: 0 0 23px 0
+	span
+		font-family: $default-font
+		font-size: 14px
+		color: #817F7F
+		line-height: 26px
+		display: inline-block
+		margin-bottom: 30px
+	ul
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			display: inline-block
+			margin-right: 60px
+			a
+				outline: none
+	
+// FIX FOOTER FOR PAGE NEWS
+
+.fix-news-desktop-footer 
+ 	margin-top: -70px 
+.fix-news-footer 
+ 	margin-top: -55px
+
+.write-to-director
+	padding-left: 45px
+
+.button-filled
+	background-color: #fff
+	padding: 17px 30px
+	text-decoration: none
+	font-size: 12px
+	text-transform: uppercase
+	color: #453939
+	font-family: $bold
+	transition: all .6s ease
+	&:hover
+		background-color: #CCB6A6
+		color: #fff
+	&:active
+		background-color: #CCB6A6
+		color: #fff	
+	&:focus
+		background-color: #CCB6A6
+		color: #fff
+
+.button-empty
+	padding: 15px 30px
+	text-transform: uppercase
+	font-size: 12px
+	color: #b2a097
+	font-family: $bold
+	border: 2px solid #b2a097
+	&:hover
+		background-color: #CCB6A6
+		color: #fff
+
+.authorize
+	color: #b2a097
+	padding: 20px 17px
+	font-size: 16px
+	font-weight: $bold
+	border: 2px solid #B2A097
+	transition: all .9s ease
+	&:hover
+		color: #fff
+		text-decoration: none
+		background-color: #CCB6A6
+		border: 2px solid #CCB6A6
+	&:active
+		color: #fff
+		text-decoration: none
+	&:focus
+		color: #fff
+		text-decoration: none
+
+.shedule-wrapper
+	padding-top: 130px
+	background-color: #EBEBEB
+
+.dates-silder
+	background-color: #fff
+	.controls-next
+		position: absolute
+		top: 0
+		right: 0
+		padding: 15px 25px
+		z-index: 1
+		background-color: #fff
+	.controls-prev
+		position: absolute
+		right: 0
+		top: 49%	
+		padding: 15px 25px
+		z-index: 1
+		background-color: #fff
+.date
+	float: left
+	width: 95px
+	a
+		height: 87px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		position: relative
+		border: 2px solid transparent
+		outline: none
+		&:hover
+			border: 2px solid #CCB6A6
+			.number-day
+				color: #CCB6A6
+			.day
+				color: #CCB6A6	
+		.month
+			text-transform: uppercase
+			font-size: 10px
+			font-family: $default-font
+			color: #8a8381
+			position: absolute
+			top: 3px
+			left: 50%
+			transform: translateX(-50%)
+		.number-day
+			color: #8A8381
+			font-size: 22px
+		.day
+			color: #8A8381
+			font-size: 14px		
+.today
+	background-color: #433E3F
+	a
+		border: 2px solid transparent
+		.number-day
+			color: #fff
+			line-height: 24px
+		.day
+			color: rgba(255, 255, 255, 0.5)
+		.month
+			color: rgba(255, 255, 255, 0.5)
+		.this-day
+			font-size: 14px
+			color: rgba(255, 255, 255, 0.5)
+			font-family: $default-font
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translateX(-50%)
+			font-weight: 400
+
+
+/* SHEDULE PAGE STYLES */
+
+.availible-shedule
+	background-color: #EBEBEB
+	.soon
+		background-color: #EBEBEB
+		padding: 50px 0
+		.slider-soon-wrapper
+			.slider-soon
+				.controls-next
+					display: none !important
+				.controls-prev
+					display: none !important	
+				.soon-item
+					.image
+						.movie-name
+							position: static
+							display: block
+							max-width: 275px
+							margin: 0 auto
+							position: relative
+							.till
+								position: absolute
+								top: -31px
+								left: 10px
+								color: #8a8381
+								font-size: 12px
+								font-family: $default-font
+								display: inline-block
+								padding: 8px 7px
+								background-color: #FFFFFF
+								border-radius: 4px
+							.years
+								background-color: #58965B
+								padding: 4px 8px
+								color: #fff
+								font-family: $bold
+								position: absolute
+								top: -31px
+								right: 10px
+								border-radius: 4px
+								border-bottom-left-radius: 0
+								border-bottom-right-radius: 0
+						.sheduled-sessions
+							list-style-type: none
+							padding: 0
+							margin: 10px 0 0 0
+							li
+								display: inline-block
+								margin: 10px 5px
+								a
+									font-size: 14px
+									font-family: $bold
+									display: inline-block
+									color: #998983
+									padding: 9px 7px
+									background-color: #fff
+									border-radius: 4px
+									position: relative
+									&:hover
+										background-color: #CCB6A6
+										color: #fff
+									.three-d
+										position: absolute
+										top: -13px
+										right: -9px
+										padding: 5px
+										border-radius: 50%
+										background-color: #58965B
+										color: #fff
+										font-size: 9px	
+								&.passed
+									a
+										background-color: transparent
+										text-decoration: line-through	
+										&:hover
+											color: #998983			
+
+
+/* FILM PAGE STYLES */
+.movie-details
+	background-color: #EBEBEB
+
+.see-shedule
+	display: inline-block
+	padding: 12px 20px
+	background-color: transparent
+	border: 2px solid #B2A097
+	color: #B2A097
+	text-transform: uppercase
+	font-family: $bold
+	font-size: 12px
+	img
+		margin-left: 10px
+	&:hover
+		color: #B2A097		
+
+
+.responsive-shedule
+	display: none
+
+.about-movie
+	padding-top: 125px
+	padding-bottom: 125px
+	h1
+		font-size: 30px
+		font-family: $bold
+		color: #453939
+		margin: 0
+		.year-allowed
+			display: inline-block
+			padding: 5px
+			position: relative
+			top: -3px
+			color: #fff
+			background-color: #58965B
+			font-family: $bold
+			font-size: 14px	
+			border-radius: 3px
+	h2
+		margin: 20px 0 30px 0
+		font-size: 20px
+		font-family: $myriad
+		font-weight: 400
+		color: #453939		
+	.video
+		position: relative
+		video
+			width: 100%	
+		.play-button
+			border: none
+			background: none
+			position: absolute
+			top: 40%
+			left: 50%	
+			transform: translate(-50%)
+			cursor: pointer		
+			outline: none
+	.movie-sessions
+		background-color: #fff
+		margin-top: 30px
+		display: inline-block
+		.date-static
+			float: left
+			width: 95px	
+			a
+				height: 87px
+				display: flex
+				align-items: center
+				justify-content: center	
+				position: relative
+				border: 2px solid transparent
+				.day-number
+					color: #8a8381
+					font-size: 22px
+				.month
+					text-transform: uppercase;
+					font-size: 10px
+					font-family: $default-font
+					color: #8a8381
+					position: absolute
+					top: 9px
+					left: 50%
+					-webkit-transform: translateX(-50%)
+					-ms-transform: translateX(-50%)
+					transform: translateX(-50%)
+				.day
+					color: #8a8381
+					font-size: 14px
+					position: absolute
+					bottom: 4px
+					left: 50%
+					-webkit-transform: translateX(-50%)
+					-ms-transform: translateX(-50%)
+					transform: translateX(-50%)
+				&:hover
+					border: 2px solid #ccb6a6
+					.day
+						color: #ccb6a6
+					.month
+						color: #ccb6a6
+					.day-number
+						color: #ccb6a6			
+			&.today
+				background-color: #433E3F
+				.day-number
+					color: #fff
+				.month
+					color: rgba(255, 255, 255, 0.5)
+	.sessions-time
+		list-style-type: none
+		margin: 30px 0 60px 0
+		padding-left: 0	
+		li
+			display: inline-block
+			margin: 0 7px
+			a
+				font-size: 14px
+				font-family: NotoSansBold,sans-serif
+				display: inline-block
+				color: #998983
+				padding: 5px 9px
+				background-color: #fff
+				-webkit-border-radius: 4px
+				border-radius: 4px
+				position: relative
+				&:hover
+					background-color: #ccb6a6
+					color: #fff
+				.three-d
+					position: absolute
+					top: -10px
+					right: -6px
+					padding: 3px
+					-webkit-border-radius: 50%
+					border-radius: 50%
+					background-color: #58965b
+					color: #fff
+					font-size: 9px
+			&.passed
+				a
+					background-color: transparent
+					text-decoration: line-through	
+					&:hover
+						background-color: transparent
+						color: #998983
+	p
+		font-size: 14px
+		font-family: $default-font
+		color: #645757
+		margin: 0 0 65px 0
+		line-height: 26px					
+
+.glasses
+	background-color: #fff
+	padding: 15px 0 20px 0
+	margin-bottom: 80px
+	h3
+		margin: 0 0 18px 0
+		font-size: 14px
+		font-family: $bold
+		color: #f16b68
+	p
+		font-size: 12px
+		color: #645757
+		margin: 0
+		font-family: $default-font
+		line-height: 20px	
+		padding-right: 60px										
+
+.poster
+	img
+		height: auto
+.detail-info
+	margin-top: 30px
+	span
+		font-size: 12px
+		font-family: $default-font
+		color: #645757
+		display: block
+		margin-bottom: 12px
+		&:first-child
+			margin-bottom: 1rem
+		b
+			font-family: $bold
+
+/* PAYMENT PAGE STYLES */
+
+.payment
+	margin-top: 120px
+	.get-back
+		padding: 13px 12px
+		text-transform: uppercase
+		color: #b2a097
+		border: 2px solid #B2A097
+		font-family: $bold
+		font-size: 12px
+		display: inline-block
+		margin-bottom: 15px
+		img
+			margin-right: 10px
+	.payment-details
+		background-color: #fff
+		padding: 45px 0
+		position: relative
+		margin-bottom: 110px
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			height: 100%
+			width: 1px
+			background-color: #D1CCC9
+		.hall-seats
+			max-width: 500px
+			margin: 0 auto
+			text-align: center
+			.seats-row
+				text-align: center
+				position: relative
+				margin-bottom: 15px
+				&.first
+					margin-top: 80px
+					margin-bottom: 35px	
+				.seat-item-wide
+					width: 36px
+					height: 50px
+					display: inline-block
+					border-radius: 3px
+					margin: 0 5px
+					cursor: pointer
+					position: relative
+					&.brown
+						background-color: #A78D82
+					&.bought
+						border: 2px solid #DBD8D7
+						background-color: transparent
+					&.chosen
+						background-color: #645757
+					&:nth-child(2n+1)
+						margin-right: 30px
+					&:last-child
+						margin-right: 0		
+				.number-of-row
+					position: absolute
+					top: 45%
+					transform: translateY(-50%)
+					left: -15px
+					color: #ab8f7d
+					font-size: 14px
+					font-family: $default-font
+				.seat-item-square
+					width: 30px
+					height: 30px
+					background-color: #DDBA8C
+					border-radius: 3px
+					display: inline-block
+					cursor: pointer	
+					margin: 0 5px
+					position: relative
+					.seat-number
+						top: -16px
+					&.bought
+						border: 2px solid #DBD8D7
+						background-color: transparent
+					&.chosen
+						background-color: #645757				
+
+.seat-place
+	.seat-number
+		position: absolute
+		top: -11px
+		left: 50%
+		transform: translateX(-50%)
+		font-family: $bold
+		color: #6e5552
+		font-size: 14px
+		padding: 5px
+		background-color: #fff
+		width: 23px
+		height: 23px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+	&.chosen
+		background-image: url("../img/seat-checked.png")
+		background-position: center center
+		background-repeat: no-repeat
+
+.cost-item
+	display: inline-block
+	margin-right: 20px
+	margin-top: 55px
+	.square__light-brown
+		width: 20px
+		height: 20px
+		display: inline-block
+		margin-right: 10px
+		background-color: #A78D82
+		position: relative
+		top: 3px
+	.square__yellow
+		width: 20px
+		height: 20px
+		display: inline-block
+		margin-right: 10px
+		background-color: #DDBA8C
+		position: relative
+		top: 3px
+.square__dark-brown
+		width: 20px
+		height: 20px
+		display: inline-block
+		margin-right: 10px
+		background-color: #6E5552
+		position: relative
+		top: 3px
+
+.cart-heading
+	display: flex
+	align-items: center
+	padding: 0 10px
+	border-top: none
+	h3
+		margin: 0 0 0 40px
+		.year-allowed
+			display: inline-block
+			padding: 5px
+			background-color: #58965B
+			color: #fff
+			font-family: $bold
+			font-size: 12px
+			border-radius: 4px
+			margin-right: 10px
+	.when
+		font-size: 16px
+		font-family: $default-font
+		color: #ab8f7d
+		display: inline-block
+		margin: 15px 0 0 40px
+.chosen-seats
+	margin-top: 35px
+	display: flex		
+	align-items: center
+	justify-content: center
+	padding: 0 40px
+	min-height: 415px
+	h4
+		font-family: $default-font
+		font-size: 12px
+		color: #453939
+		text-transform: uppercase
+		position: relative
+		letter-spacing: 1px
+		&::after
+			content: ''
+			height: 1px
+			background-image: url("../img/choose-seats.png")
+			width: 100%
+			position: absolute
+			top: 10px
+			left: -140px
+		&::before
+			content: ''
+			height: 1px
+			background-image: url("../img/choose-seats.png")
+			width: 100%
+			position: absolute
+			top: 10px
+			right: -140px
+.seats-filled
+	margin-top: 35px
+	padding: 0 10px
+	.seat-row-gought
+		padding: 17px 0
+		margin-right: 40px
+		border-bottom: 1px dotted #B1AEAE
+		&:first-child
+			border-top: 1px dotted #B1AEAE
+		.chosen-row
+			font-size: 12px
+			font-family: $default-font
+			color: #453939
+			.row-n
+				font-size: 20px
+				font-family: $bold
+				color: #453939
+				position: relative
+				top: 3px
+				display: inline-block
+				margin-left: 10px
+
+.uah
+	font-size: 14px
+	font-family: $bold
+	color: #453939
+	display: inline-block
+	margin-left: 5px
+
+.payment-info
+	padding: 0 40px
+	cursor: pointer
+	margin-top: 40px
+	.payment-lightbox
+		position: relative
+		display: inline-block
+		margin-right: 15px
+		.lightbox
+			position: absolute
+			top: -79px
+			opacity: 0
+			left: -123px
+			width: 250px
+			padding: 17px
+			background-color: #B19F96
+			color: #fff
+			text-align: center
+			font-size: 14px
+			font-family: $default-font
+			line-height: 18px
+			transition: all .6s ease
+			z-index: 3
+			&::after
+				content: ''
+				border-right: 9px solid transparent
+				border-left: 9px solid transparent
+				border-bottom: 9px solid #B19F96
+				position: absolute
+				bottom: -9px
+				left: 50%
+				transform: rotate(-180deg)
+			
+
+.showbox:hover .lightbox
+	opacity: 1
+
+.price-final
+	background-color: #F6F4F3
+	padding: 14px 18px
+	font-family: $bold
+	font-size: 20px
+	position: relative
+	top: 3px
+	cursor: default
+
+.buy
+	display: inline-block
+	padding: 15px 35px
+	font-family: $bold
+	font-size: 14px
+	background-color: #645757
+	text-transform: uppercase
+	color: #fff
+	&:hover
+		color: #fff
+		text-decoration: none
+
+.info-left
+	padding: 0 40px
+	.seats-filled, .opacied
+		opacity: .5
+
+.glasses-notification
+	margin-top: 150px
+	background-color: #F4F4F4
+	height: 55px
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 0 40px
+	p
+		color: #453939
+		font-size: 12px
+		line-height: 16px
+		margin: 0 0 0 20px
+
+.autorization
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	text-align: center
+	.heading
+		margin-bottom: 60px
+		h3
+			color: #453939
+			font-size: 28px
+			margin: 0
+			font-family: $bold
+	.mail
+		h4
+			font-family: $bold
+			font-size: 16px
+			color: #453939	
+			margin-bottom: 6px	
+		p
+			font-size: 14px
+			font-family: $myriad
+			color: #453939	
+			margin: 0 0 13px 0
+		form
+			input
+				font-size: 16px
+				padding: 10px 15px
+				border: none
+				background-color: #F4F4F4
+			button
+				background-color: #645757
+				padding: 10px 15px
+				border: none
+				outline: none
+				margin-left: -5px		
+				cursor: pointer
+	.or
+		text-align: center
+		margin: 40px 0
+		span
+			color: #453939
+			font-size: 16px		
+			font-family: $bold
+	.popup
+		position: absolute
+		width: 460px
+		background-color: #fff
+		top: 30%
+		left: 50%
+		transform: translate(-50%)
+		box-shadow: 0 0 10px rgba(0,0,0,0.3)
+		padding: 30px 40px
+		text-align: left
+		display: none
+		p
+			color: #453939
+			font-size: 14px
+			line-height: 24px
+			font-family: $default-font
+		ul
+			list-style-type: none
+			padding: 0
+			margin: 0
+			li
+				color: #453939
+				font-size: 14px
+				line-height: 24px
+				font-family: $default-font
+		.close
+			position: absolute
+			top: 11px
+			right: 15px		
+
+
+.fb-a
+	background-color: #38559C
+	font-size: 14px
+	font-family: $bold
+	padding: 10px 20px
+	color: #fff
+	&:hover
+		color: #fff
+	&:active
+		color: #fff
+	img
+		margin-right: 30px			
+
+.g-plus
+	background-color: #E14929
+	font-size: 14px
+	font-family: $bold
+	padding: 10px 20px
+	color: #fff
+	&:hover
+		color: #fff
+	&:active
+		color: #fff
+	img
+		margin-right: 30px
+
+.authorized-payment
+	.you-entered
+		font-size: 16px
+		color: #453939
+		margin: 0 0 30px 0
+		b
+			font-family: $bold
+	.wrapper, .wrapper-account
+		max-width: 380px
+		margin: 0 auto
+		.tabs, .tabs-account
+			.tab, .tab-account
+				display: inline-block
+				margin: 0 10px
+				padding: 6px 10px
+				border: 2px solid #B2A097
+				color: #b2a097
+				transition: all .7s ease
+				border-radius: 30px			
+				font-size: 14px
+				font-family: $bold
+				cursor: pointer
+				&.active
+					background-color: #B2A097
+					color: #fff
+		.tab_content, .tab_content-account
+			.tab_item, .tab_item-account
+				form
+					margin-top: 10px
+					label
+						margin-top: 20px
+						margin-bottom: 10px
+						color: #453939
+						font-size: 12px
+						font-family: $default-font
+						&.declined
+							color: #F16B68
+					input
+						display: block
+						width: 100%		
+						font-size: 16px
+						padding: 10px 45px 10px 15px
+						border: none
+						background-color: #F4F4F4
+						color: #453939
+						background-repeat: no-repeat
+						background-position: 95% center
+						border-bottom: 2px solid transparent	
+						&.confirmed
+							background-image: url("../img/confirmed.png")
+						&.declined
+							background-image: url("../img/declined.png")
+							border-bottom: 2px solid #F16B68
+					.pay
+						display: inline-block
+						margin-top: 30px
+						background-color: #645757
+						color: #fff
+						font-family: $bold
+						font-size: 12px
+						text-transform: uppercase
+						padding: 12px 30px				
+						border: none	
+
+.card-pay
+	.payment-details
+		&::after
+			display: none
+
+.finish-payment
+	margin-bottom: 20px
+	color: #f16b68
+	font-size: 14px
+	b
+		font-family: $bold
+
+.bonus-payment
+	padding: 25px 0 !important
+	.bonus-inner
+		max-width: 480px
+		margin: 0 auto
+		h2
+			margin-bottom: 13px
+			color: #453939
+			font-family: $bold
+			font-size: 20px
+		p
+			font-size: 14px
+			font-family: $default-font
+			color: #453939
+			line-height: 20px	
+		.button-wrapper
+			margin-top: 20px	
+			button
+				border: none
+				outline: none
+				background-color: #4F8CB6
+				color: #fff
+				text-transform: uppercase
+				font-size: 12px
+				padding: 13px 20px
+				font-family: $bold
+				letter-spacing: 1px
+				cursor: pointer
+			&.not-enougth
+				span
+					color: #f16b68
+					font-size: 12px
+					display: block
+					margin-bottom: 12px
+				button
+					background-color: #645757		
+		.by-support
+			display: flex
+			max-width: 420px
+			margin: 65px auto 0 auto
+			p
+				text-align: left
+				color: #392e27
+				font-size: 12px
+				line-height: 15px	
+				margin-right: 20px		
+
+.bonus-card-template
+	max-width: 460px
+	margin: 0 auto
+	background-image: url("../img/bonus-card-template.png")
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	padding: 20px 40px
+	form
+		text-align: left
+		label
+			color: #453939
+			font-size: 12px
+			font-family: $default-font
+			display: block
+			margin-bottom: 10px
+			padding-left: 15px
+			&.on-your
+				display: inline-block
+				margin-bottom: 0
+				line-height: 20px
+		input
+			display: inline-block
+			width: 100%
+			margin-bottom: 20px
+			font-size: 16px
+			color: #453939
+			padding: 10px 45px 10px 15px
+			border: none
+			max-width: 380px	
+			background-repeat: no-repeat
+			background-position: 95% center
+			border-bottom: 2px solid transparent	
+			box-shadow: 0 0 10px rgba(0,0,0,0.3)
+			&.confirmed
+				background-image: url("../img/confirmed.png")
+			&.declined
+				background-image: url("../img/declined.png")
+				border-bottom: 2px solid #F16B68
+		.bonus-number
+			font-family: $bold
+			color: #453939
+			font-size: 14px
+			.val
+				font-size: 20px
+
+.account
+	.payment-details
+		&::after
+			display: none			
+		.tab
+			color: #645757
+			font-size: 14px
+			font-family: $bold
+			display: inline-block
+			margin: 0 20px
+			padding-bottom: 15px
+			cursor: pointer
+			&.active
+				border-bottom: 2px solid #A7978A
+				color: #a7978a
+		.autorization
+			position: static
+			margin-top: 40px
+			margin-bottom: 195px
+			button
+				color: #fff
+
+.tickets-empty
+	min-height: 550px
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	h4
+		color: #453939
+		font-size: 12px
+		text-transform: uppercase
+		letter-spacing: 1px
+		position: relative
+		font-weight: 400
+		&::after
+			content: ''
+			display: inline-block
+			position: absolute
+			height: 1px
+			width: 100%
+			top: 10px
+			left: -265px	
+			background-image: url("../img/choose-seats.png")
+			background-repeat: repeat-x
+		&::before
+			content: ''
+			display: inline-block
+			position: absolute
+			height: 1px
+			width: 100%
+			top: 10px
+			left: 265px	
+			background-image: url("../img/choose-seats.png")
+			background-repeat: repeat-x
+	.to-shedule
+		display: inline-block
+		padding: 13px 20px
+		text-transform: uppercase
+		color: #b2a097
+		font-family: $bold
+		letter-spacing: 1px
+		border: 2px solid #AF9D95
+		margin-top: 18px
+
+.tickets-list
+	max-width: 1010px
+	margin: 0 auto
+
+.table-names
+	text-align: left
+	margin-top: 45px
+	padding-bottom: 20px
+	span
+		color: #AEA9A9
+		font-size: 12px
+		text-transform: uppercase
+		font-family: $bold					
+
+.ticket-row
+	text-align: left
+	padding: 20px 0
+	border-top: 1px dotted #B1AEAE
+	&:last-child
+		border-bottom: 1px dotted #B1AEAE
+	span
+		font-size: 14px
+		color: #453939
+		font-family: $default-font
+	.img-wrapper
+		display: inline-block
+		float: left	
+		margin-right: 20px
+	.movie-name
+		color: #453939
+		font-size: 18px
+		font-family: $bold
+		line-height: 30px
+		.years-allowed
+			display: inline-block
+			background-color: #58965B
+			font-size: 12px
+			font-family: $bold
+			color: #fff
+			padding: 3px 6px
+			border-radius: 3px
+			line-height: 24px
+			margin-left: 15px
+	.date-sheduled
+		display: block
+		color: #ab8f7d
+		font-size: 14px
+		margin-top: 12px	
+	.ticket-price
+		font-size: 18px
+		font-family: $bold
+		color: #453939
+		.uah
+			font-size: 14px
+	.tickets-link
+		font-size: 12px
+		text-transform: uppercase
+		color: #fff
+		padding: 11px 20px
+		background-color: #645757
+		font-family: $bold
+		letter-spacing: 1px	
+	.tickets-open
+		color: #fff
+		background-color: #F16B68
+		padding: 11px 20px
+		font-size: 12px
+		text-transform: uppercase
+		font-family: $bold
+		letter-spacing: 1px	
+	.payment-failed
+		color: rgba(69, 57, 57, 0.5)
+		font-size: 14px
+		font-family: $default-font	
+
+.pay-in
+	color: #f16b68
+	margin: 35px 0
+	font-size: 14px
+	font-family: $default-font
+	position: relative
+	b
+		font-family: $bold
+		font-size: 18px
+	.back
+		position: absolute
+		left: 5px
+		color: #b2a097
+		font-size: 12px
+		font-family: $bold
+		text-transform: uppercase
+		img
+			margin-right: 6px	
+
+.my-tickets
+	padding: 0 20px
+
+.personal-code
+	background-image: url("../img/rullete-bg.png")
+	background-size: 100%
+	margin-top: 50px
+	padding: 0 25px
+	background-repeat: no-repeat
+	h3
+		color: #fff
+		font-size: 18px
+		font-family: $bold
+		padding: 25px 0
+	p
+		margin: 0
+		font-size: 14px
+		color: #fff
+	ul
+		margin: 20px 0 40px 0
+		padding: 0
+		list-style-type: none
+		li
+			font-family: $bold
+			font-size: 14px
+			color: #ab8f7d
+			margin-bottom: 20px
+	.text-left
+		font-size: 12px
+		color: #fff
+		padding-right: 70px	
+		padding-bottom: 35px
+
+.heading-of-ticket 
+	h2
+		font-family: $bold
+		font-size: 20px
+		color: #453939
+		margin-bottom: 15px
+		.years
+			font-size: 12px
+			font-family: $bold
+			color: #fff
+			padding: 5px
+			border-radius: 3px
+			background-color: #58965B
+			display: inline-block
+			margin-left: 10px
+	.when-where
+		color: #ab8f7d
+		font-size: 16px
+		display: block
+		margin-bottom: 35px
+	.print
+		display: inline-block
+		padding: 15px 20px
+		color: #fff
+		font-size: 12px
+		font-family: $bold
+		background-color: #4F8CB6
+		letter-spacing: 1px
+		text-transform: uppercase
+		&:hover
+			color: #fff
+			text-decoration: none			
+
+.bought-tickets-wrapper
+	margin-top: 30px
+	.bought-tickets-row 
+		padding: 30px 0 15px 0 
+		border-top: 1px dotted #B1AEAE
+		&:last-child
+			border-bottom: 1px dotted #B1AEAE
+		.ticket-details
+			&.price-det
+				margin-top: 35px
+			.ticket-nmb
+				font-size: 14px
+				font-family: $bold
+				color: #ab8f7d
+				text-transform: uppercase
+				letter-spacing: 0.5px
+				display: block
+				margin-bottom: 13px
+			.ticket-code
+				font-size: 12px
+				font-family: $default-font
+				color: #453939
+				margin-bottom: 15px
+				display: inline-block
+				margin-right: 25px
+				.direct-code
+					font-family: $bold
+					font-size: 18px
+					padding-left: 10px
+		ul
+			list-style-type: none
+			padding: 0
+			margin: 0
+			li
+				color: #453939
+				font-size: 14px
+				line-height: 24px
+				margin-bottom: 15px			
+
+.tickets-back
+	h3
+		font-family: $bold
+		font-size: 20px
+		margin: 30px 0 20px 0
+	p
+		font-size: 14px
+		color: #453939
+		margin: 0
+	.rules
+		color: #ab8f7d
+		text-decoration: underline
+		font-size: 12px	
+	.request-numb
+		font-size: 14px
+		color: #453939
+		margin-top: 50px
+		margin-bottom: 40px
+		a
+			color: #ab8f7d
+
+.give-back-tickets
+	display: inline-block
+	background-color: #4F8CB6
+	color: #fff
+	text-transform: uppercase
+	font-family: $bold
+	font-size: 12px
+	padding: 12px 20px
+	&:hover
+		color: #fff
+
+.autorization-data
+	max-width: 380px
+	margin: 30px auto 0 auto
+	.input-wrappper 
+		label
+			font-size: 12px
+			color: #453939
+			display: inline-block
+			margin-bottom: 10px
+		.input
+			position: relative
+			input
+				font-size: 16px
+				background-color: #F4F4F4
+				padding: 11px 10px
+				border: none
+				display: block
+				width: 100%
+				margin-bottom: 14px	
+			.default-info
+				position: absolute
+				top: 7px
+				right: -20px
+				display: inline-block
+				&:hover
+						p
+							display: block
+				img
+					cursor: pointer
+				p
+					width: 360px
+					font-size: 14px
+					color: #fff
+					line-height: 18px
+					padding: 20px
+					background-color: #B19F96
+					position: absolute
+					top: 42px
+					left: -179px
+					display: none
+					&::after
+						content: ''
+						border-right: 9px solid transparent
+						border-left: 9px solid transparent
+						border-bottom: 9px solid #B19F96
+						position: absolute
+						top: -9px
+						left: 50%
+						transform: rotate(360deg)
+		.add-email
+			font-size: 12px
+			color: #ab8f7d
+			border-bottom: 1px dashed #ab8f7d
+			display: inline-block
+			margin-bottom: 25px
+		.soc-accs
+			.fb-a, .g-plus
+				padding: 10px 10px
+				margin: 0 20px
+				display: inline-block
+
+.active-sessions
+	padding: 0 105px 60px 105px
+	h3
+		color: #453939
+		font-size: 20px
+		font-family: $bold
+		margin: 90px 0 23px 0
+
+.service
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	&.default-service
+		background-color: #645757
+	&.facebook
+		background-color: #38559C
+	&.google-plus
+		background-color: #E14929
+.service-info
+	height: 50px
+	display: flex
+	align-items: flex-start
+	flex-direction: column
+	justify-content: center
+	.e-mail-name
+		font-size: 14px
+		color: #453939
+		display: inline-block
+		margin-bottom: 4px
+		b
+			display: inline-block
+			padding: 0 10px 0 0
+	.remove-session
+		color: #b2a097
+		font-size: 12px
+		img
+			padding-right: 20px		 
+
+.table-item
+	padding: 20px 0
+	border-top: 1px dotted #B1AEAE
+	&:last-child
+		border-bottom: 1px dotted #B1AEAE
+
+.cards-wrapper
+	margin-top: 30px
+	.delete-card
+		display: inline-block
+		margin-top: 14px
+		color: #b2a097
+		font-size: 12px
+		img
+			padding-left: 10px				
+
+.centered
+	margin-top: 30px
+
+.add-card
+	a
+		text-transform: uppercase
+		color: #ab8f7d
+		font-size: 12px
+		font-family: $bold
+		display: inline-block
+		margin: 50px 0
+		position: relative
+		letter-spacing: 1px
+		position: relative
+		img
+			padding-right: 10px
+		&::before
+			content: ''
+			position: absolute
+			top: 15px
+			left: -380px
+			width: 360px	
+			height: 1px
+			background-image: url(../img/choose-seats.png)
+			background-repeat: repeat-x
+		&::after
+			content: ''
+			position: absolute
+			top: 15px
+			right: -380px
+			width: 360px	
+			height: 1px
+			background-image: url(../img/choose-seats.png)
+			background-repeat: repeat-x	
+
+.vip-banner
+	min-height: 590px
+	background-image: url("../img/vip-banner.jpg")
+	background-size: cover
+	background-position: center
+
+.vip-description
+	background-color: #F6F4F3
+	padding-top: 40px
+	max-height: 440px
+	.hall-description
+		padding: 41px 30px
+		background-color: #fff
+		position: relative
+		top: -151px 
+		h1
+			font-size: 30px
+			font-family: $bold
+			color: #453939
+			margin: 0 0 22px 0
+		p
+			margin: 0 0 20px 0
+			color: #645757
+			font-size: 14px
+			line-height: 26px	
+
+	.vip-prices
+		margin-top: 0px
+		.prices-heading
+			max-width: 380px
+			margin: 0 auto
+			p
+				font-size: 12px
+				color: #645757
+				margin: 0 0 20px 0px
+			.price-item
+				display: inline-block
+				padding: 20px 37px
+				border: 4px solid #fff
+				span
+					display: block
+					color: #645757
+					&.before
+						font-size: 14px
+						margin-bottom: 5px
+					&.price
+						font-family: $bold
+						font-size: 22px	
+			.callme
+				display: block
+				color: #fff
+				text-transform: uppercase
+				letter-spacing: 1px
+				font-family: $bold
+				padding: 15px 0
+				text-align: center
+				background-color: #645757
+				margin-top: 30px
+				//margin-left: 10px
+				font-size: 12px
+				&:hover
+					background-color: #CCB6A6			
+
+.catalogue-vip
+	position: relative
+	top: -50px
+	background-color: #fff
+	padding-top: 80px
+	h2
+		color: #453939
+		font-size: 30px
+		margin: 0
+		padding-bottom: 65px
+		font-family: $bold
+	select
+		display: block
+		width: 100%
+		font-size: 16px
+		color: #453939
+
+.dropdown-toggle::after
+	display: none
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+	display: block
+	width: 100%
+	top: -25px
+
+.btn
+	font-size: 16px
+	background-color: #F6F4F3
+	color: #453939
+	border: none
+	line-height: 20px
+	padding: 20px 15px 15px 15px
+	outline: none !important
+	border-radius: 0
+	&:hover
+		background-color: #F6F4F3
+		color: #453939
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option
+	position: relative
+	&::after
+		content: ''
+		background-image: url("../img/vip-dd.png")
+		background-repeat: no-repeat
+		width: 14px
+		height: 8px
+		position: absolute
+		top: 4px
+		right: 0
+
+.dropdown-menu
+	padding: 0
+	border-radius: 0
+	margin: 0
+	top: 99%
+	background-color: #F4F4F4
+	border: none
+	font-size: 16px
+
+.bootstrap-select.btn-group .dropdown-menu li
+	padding: 10px 15px 10px 15px
+	&:hover
+		background-color: #B2A097
+		a
+			color: #fff
+
+.bootstrap-select.btn-group .dropdown-menu li a
+	font-size: 16px
+	color: #453939
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle
+	background-color: #F6F4F3
+	outline: none
+
+.btn-info.focus, .btn-info:focus
+	box-shadow: none
+	outline: none
+						
+.bootstrap-select .dropdown-toggle:focus
+	outline: none !important
+
+.btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show>.btn-info.dropdown-toggle:focus
+	box-shadow: none
+	color: #453939
+
+.filters
+	padding-bottom: 40px
+	label
+		position: relative
+		top: -25px
+		display: inline-block
+		font-size: 12px
+		color: #453939
+		margin-left: 15px
+	input
+		padding: 16px 15px 16px 15px
+		background-color: #F6F4F3
+		border: none
+		display: block
+		width: 100%
+		font-size: 16px
+
+.inp-wp
+	position: static
+	top: -24px
+	margin-bottom: 30px
+	margin-top: -23px	
+	&::after
+		content: ''
+		position: absolute
+		width: 50px
+		height: 57%
+		top: 10px
+		right: 0
+		background-color: #645757
+		background-image: url("../img/search-icon.png")
+		background-position: center
+		background-repeat: no-repeat
+		cursor: pointer
+	
+// CSS DENIS
+.vip-films-list
+	position: relative
+	top: -32px
+	
+.vip-film-item
+	display: block
+	margin-bottom: 27px
+	img
+		margin-bottom: 12px
+	.name-of-film
+		display: block
+		font-size: 12px
+		text-transform: uppercase
+		font-family: $bold
+		color: #453939
+		line-height: 20px
+
+.pagination-vip
+	position: relative
+	top: 24px
+	ul
+		list-style-type: none
+		display: inline-block
+		margin: 0
+		padding: 0 0 120px 0
+		li
+			display: inline-block
+			margin: 0 10px
+			a
+				padding: 12px 10px
+				color: #453939
+				font-size: 16px
+			&.nav-left
+				margin-right: 10px
+				a
+					padding: 15px 10px
+					background-color: #fff
+					display: inline-block
+			&.nav-right
+				margin-left: 10px
+				a
+					padding: 15px 10px
+					background-color: #fff
+					display: inline-block
+			&.current
+				border-bottom: 2px solid #B2A097
+				a
+					color: #B2A097		
+
+.vip-movie
+	h1
+		margin-bottom: 45px
+	p
+		margin-top: 40px
+		margin-bottom: 50px	
+
+.vip-screens
+	list-style-type: none
+	margin: 0
+	padding: 0
+	li
+		display: inline-block
+		margin-right: 40px
+		margin-bottom: 30px		
+		&:last-child
+			margin-right: 0
+		a
+			display: inline-block
+			img
+				width: 170px
+				height: 95px
+
+	
+.second-see-shedule
+	display: none	
+.loyality-container
+	max-width: 800px
+	margin: 0 auto
+
+.loyality-system
+	padding-top: 150px
+	h1
+		font-size: 30px
+		font-family: $bold
+		color: #453939
+		line-height: 40px
+		margin-bottom: 30px
+	p
+		font-size: 16px
+		line-height: 30px
+		padding-right: 30px
+		color: #645757	
+	&.grey-part
+		background-color: #EBEBEB
+		max-height: 510px
+
+.white-part
+	padding-top: 270px
+	background-color: #fff
+	p
+		color: #645757
+		font-size: 14px
+		line-height: 26px
+		margin-top: 40px
+		margin-bottom: 35px
+
+.leave-task
+	display: inline-block
+	padding: 18px 30px
+	background-color: #645757
+	color: #fff
+	text-transform: uppercase
+	font-family: $bold
+	letter-spacing: 1px
+	margin-bottom: 120px
+	&:hover
+		background-color: #B2A097
+		color: #fff
+.fix-task
+	display: none
+
+.authorized-menu
+	ul
+		display: inline-block
+		list-style-type: none
+		padding: 28px 115px 25px 25px
+		border: 2px solid #B2A097
+		li
+			margin-bottom: 25px
+			a
+				font-family: $bold
+				color: #a7978a
+				font-size: 16px
+				position: relative
+				&:hover
+					left: 10px
+					color: #CCB6A6
+			&.exit
+				margin-top: 15px
+				margin-bottom: 0
+				&:hover
+					a
+						left: 0
+				a
+					font-family: $default-font			
+
+
+
+// This is code by Denis
+
+// PAGE 1 ( Error page )
+
+.error-section
+	margin-top: 120px
+	margin-bottom: 85px
+	overflow: hidden
+	.container-for-image-error
+		position: relative
+		.block-error 
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%)
+			background: #3d3838;
+			height: 100%;
+			padding: 15px 35px
+			width: 18%
+			p
+				margin-bottom: 0
+			h1
+				font-family: $bold
+				font-size: 60px
+				text-align: center
+				margin-bottom: 10px
+				color: #fff
+				+ p 
+					font-family: $bold
+					font-size: 18px
+					text-align: center
+					text-transform: uppercase
+					margin-top: -20px
+					margin-bottom: 1rem
+					color: #fff
+			.page-undefined
+				font-family: "NotoSansRegular", Arial, sans-serif
+				font-size: 15px
+				line-height: 18px
+				margin-bottom: 2rem
+				text-transform: uppercase
+				text-align: center
+				color: #fff
+			.button-empty
+				background-image: url(../img/arrow-others.png);
+				background-repeat: no-repeat;
+				background-position: 90% center
+				padding-top: 11px
+				padding-bottom: 11px
+				padding-left: 13px;
+				padding-right: 40px;
+				margin-top: 1rem
+				&:hover
+					color: #fff;
+		
+
+.sub-footer
+	background-color: #fff
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-flow: column
+	padding: 45px 0
+	.logo-subfooter
+		margin-bottom: 1rem
+	.sub-caption
+		font-size: 14px
+		color: #767171
+		
+		
+// PAGE 2 ( HALL page )
+.people-sm
+	display: none
+
+.rotate-caption
+	font-family: $bold
+	font-size: 40px
+	text-transform: uppercase
+	transform: rotate(-90deg)
+	opacity: 0.3
+	p
+		margin-top: -20px
+		margin-right: 60px
+		font-size: 55px
+
+// first section
+
+.schem-first-hall
+	background-color: #ebebeb
+	padding: 40px 30px 100px 30px
+	margin-top: 120px
+	margin-bottom: 75px
+	width: 102%
+	h1
+		font-family: $bold
+		font-size: 30px
+		text-align: center
+		margin-bottom: 4rem
+	.schem-first-block
+		text-align: center
+		h4.rotate-caption
+			position: absolute
+			top: 25px
+			left: -80px
+		img
+			position: absolute
+			top: 0
+			left: 30%
+	.fb-left
+		position: absolute
+		left: 20%
+		bottom: 0
+		border: 4px solid #fff
+		padding: 10px 40px 0px 40px
+		.time
+			font-size: 14px
+			color: #645757
+			+ p
+				font-family: $bold
+				font-size: 22px
+	.fb-right
+		position: absolute
+		right: 15%
+		bottom: 0
+		border: 4px solid #fff
+		padding: 10px 40px 0px 40px
+		.time
+			font-size: 14px
+			color: #645757
+			+ p
+				font-family: $bold
+				font-size: 22px
+	.more-info
+		position: relative
+		top: 450px
+		left: 10px
+		font-family: $bold
+		font-size: 12px
+		display: inline-block
+		text-transform: uppercase
+		letter-spacing: 1.2px;
+		color: #b2a097
+		&::after
+			content: "→"
+			font-size: 23px
+			position: absolute
+			top: -11px
+			left: 90px
+
+// Second section
+
+.schem-second-hall
+	margin-bottom: 2rem
+	margin-bottom: 5%
+	h4.rotate-caption
+		position: absolute
+		top: 0
+		+ img
+			position: absolute
+			top: 5%
+			left: 18%
+		p
+			margin-right: 0
+			margin-left: -137px
+	.price-column
+		position: absolute
+		top: 30px
+		right: 20px
+		text-align: right
+		p
+			margin-bottom: 0
+		.price-item
+			font-family: $bold
+			font-size: 14px
+			border-bottom: 1px solid rgba(#453939,.2)
+			padding-top: 15px
+			padding-bottom: 30px
+			margin-bottom: 1rem
+			color: #645757
+			&:nth-child(1)
+				font-family: "NotoSansRegular", Arial, sans-serif
+				font-size: 12px
+				padding-top: 0
+				padding-bottom: 15px
+			&:last-child
+				border-bottom: none
+				
+// Third section
+
+.schem-third-hall
+	background-color: #ebebeb
+	padding: 40px 30px 100px 30px
+	h4.rotate-caption
+		position: absolute
+		top: 0
+		+ img
+			position: absolute
+			top: 5%
+			left: 18%
+		p
+			margin-right: 0
+			margin-left: -170px
+	.price-column
+		position: absolute
+		top: 30px
+		right: 20px
+		text-align: right
+		p
+			margin-bottom: 0
+		.price-item
+			font-family: $bold
+			font-size: 14px
+			border-bottom: 1px solid rgba(#453939,.2)
+			padding-top: 15px
+			padding-bottom: 30px
+			margin-bottom: 1rem
+			color: #645757
+			&:nth-child(1)
+				font-family: "NotoSansRegular", Arial, sans-serif
+				font-size: 12px
+				padding-top: 0
+				padding-bottom: 15px
+			&:last-child
+				border-bottom: none
+
+		
+// PAGE 3 ( Contacts )
+
+.contacts
+	margin-top: 120px
+	margin-bottom: 85px
+	h1
+		font-family: $bold
+		font-size: 30px
+		text-align: center
+		margin-bottom: 2.5rem
+	.contacts-list
+		font-size: 15px
+	.contacts-phones
+		font-size: 15px
+		margin-top: 4rem
+	.time-working
+		margin-top: 4rem
+		.time-caption
+			font-family: $bold
+	.contacts-social
+		margin-top: 4rem
+		ul
+			list-type: none
+			padding: 0
+			margin: 0
+			li
+				display: inline-block
+				margin-right: 20px
+	#palladium-location
+		height: 100%
+		
+		
+		
+.ft-feedback
+	background-color: #F6F4F3
+	background-image: none
+	background-size: none
+	background-position: 0 0
+	padding: 60px 0
+	.ft-socials
+		h5
+			font-family: $bold
+			color: #827878
+			margin-bottom: 3rem
+.contacts-custom            
+	form
+		input,
+		textarea
+			display: block
+			background-color: transparent
+			border: none
+			border-bottom: 1px solid #CFCFCE
+			width: 100%
+			margin-bottom: 2rem
+			padding: 10px 20px
+			color: #CFCFCE
+		textarea
+			resize: none
+		label
+			font-size: 12px
+		button
+			background-color: #645757
+			float: right
+			font-family: $bold
+			text-transform: uppercase
+			padding: 15px 40px
+			border: none
+			outline: none
+			color: #fff
+			cursor: pointer
+
+// PAGE 4 ( News )
+
+
+.top-section-news
+	margin-top: 120px
+	padding: 25px
+	h1
+		font-family: $bold
+		font-size: 30px
+		// правки
+		margin-top: 3rem
+		margin-left: -14px
+		+ p
+			font-size: 16px
+			padding: 20px 115px 10px 0;
+			margin-left: -14px
+			color: #645757
+	.nw-btn
+		position: relative
+		font-family: NotoSansBold,sans-serif;
+		font-size: 12px;
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		margin-left: -14px
+		color: #b2a097;
+		&:after
+			content: "→";
+			font-size: 23px;
+			position: absolute;
+			top: -11px;
+			left: 90px;
+.wrapper-to-slider
+	position: relative
+	z-index: 1;
+	.slider-vimeo
+		.controls-prev
+			position: absolute
+			bottom: -12%
+			left: 10%
+			background-color: #fff
+			padding: 15px 25px
+			z-index: 999
+			&:hover
+				background-color: #CCB6A6
+		.controls-next
+			position: absolute
+			bottom: -12%
+			left: 18%
+			background-color: #fff
+			padding: 15px 25px
+			z-index: 999
+			&:hover
+				background-color: #CCB6A6
+
+	.current-item-slider
+		position: absolute
+		margin-bottom: 0
+		margin-top: 0.2rem
+		left: 10px
+		> span
+			font-family: $bold
+			font-size: 14px
+			color: #645757
+			&.current-slide
+				font-family: $bold
+				font-size: 18px
+.bottom-section-news
+	position: relative
+	top: -70px
+	background-color: #EBEBEB
+	padding: 145px 0 50px 0
+	.news-block
+		background-color: #fff
+		padding: 2% 2% 0 2%
+		margin-bottom: 3rem
+		h1
+			font-family: $bold
+			font-size: 30px
+			margin-top: 25%
+			margin-bottom: 1rem
+		p
+			font-family: $default-font;
+			font-size: 16px
+			color: #746969
+		&.one
+			padding: 0
+			h1,
+			p
+				padding-left: 20px
+		&.two
+			padding: 0
+			h1,
+			p
+				padding: 0 20px 0 20px
+		&.three
+			padding: 0
+			h1,
+			p
+				padding-left: 20px
+		&.four
+			padding: 0
+			h1,
+			p
+				padding: 0 20px 0 20px
+				
+.fix-padding
+	padding: 0!important
+
+.scheme-slider
+	img
+		width: 100%
+
+.contact-us-part
+	background-color: #4B4747
+	padding: 55px 0
+	&.bg-map
+		background-image: url("../img/mobile-bg.png")
+		background-size: cover
+	h3
+		font-family: $bold
+		font-size: 26px
+		color: #fff
+		margin: 0 0 20px 0
+	p
+		font-size: 14px
+		color: rgba(255, 255, 255, 0.3)
+	ul
+		list-style-type: none
+		margin-top: 25px
+		li
+			display: inline-block
+			margin-right: 30px	
+
+.write-mt
+	margin-top: 30px
+
+.slider-cards
+	display: none
+	.card-description
+		.card-name
+			font-family: $bold
+			color: #645757
+			text-transform: uppercase
+			display: inline-block
+			margin-bottom: 20px
+		p
+			font-size: 12px
+			color: #645757
+			line-height: 20px
+			padding-right: 30px	
+
+.mobile-shown
+	display: none
+
+.noscroll
+	overflow-y: hidden
+
+.availible-shedule .soon .slider-soon-wrapper .soon-item .image .play-button
+	top: 33%
+
+.contact__item a.lang:hover
+	color: #CCB6A6
+
+.slider-home .slide__description .other-dates:hover
+	color: #e3cdbc
+
+.slider-home .slide__description h2:hover
+	color: #e3cdbc
+	.availible-year
+		display: none
+
+.actions .actions-item .actions-link:hover
+	color: #ccb6a6
+
+.fix-home
+	margin-top: -22px
+.siteby
+	position: relative
+	padding-right: 30px
+	.text-center
+		position: absolute
+		top: 50%
+		left: 50%
+		width: fit-content
+		transform: translate(-50%);
+		a
+			font-size: 14px
+			position: relative
+			padding-right: 90px
+			color: #bbb
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				background-image: url("../img/unit-space.svg")
+				width: 50px
+				height: 30px
+				background-size: 100%
+				background-repeat: no-repeat
+			&:hover
+				color: #ccc	
+
+.try-luck
+	position: fixed
+	top: 145px
+	right: -50px
+	z-index: 2
+	cursor: pointer
+	height: 110px
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: all .6s ease
+	&:hover
+		span
+			opacity: 1	
+	a
+		display: inline-block
+		span
+			text-transform: uppercase
+			font-family: $bold
+			color: #e2ddd6
+			font-size: 14px
+			opacity: .0	
+		.fortune-wheel:hover
+			transform: rotate(360deg)
+
+#write-director
+	background-color: #F6F4F3
+	max-width: 590px
+	margin: 0 auto
+	padding: 0 0 60px 0
+	position: relative
+	.popup-heading
+		background-color: #fff
+		padding: 30px 65px 30px 65px
+		position: relative
+		h4
+			font-family: $bold
+			margin: 0
+			font-size: 22px
+			color: #645757
+		.close-director-popup
+			position: absolute
+			right: 30px
+			top: 30px	
+	.popup-form
+		padding: 0 65px
+		label
+			color: #453939
+			font-size: 12px
+			margin-top: 45px
+		input
+			width: 100%
+			background-color: transparent
+			border: none
+			padding: 10px 0
+			font-size: 16px
+			color: #453939
+			border-bottom: 1px solid #B3B3B3
+			&::placeholder
+				color: #453939
+		button
+			background-color: #645757
+			font-size: 12px
+			color: #fff
+			text-transform: uppercase
+			letter-spacing: 1px
+			padding: 20px 45px
+			border: none
+			margin-top: 40px	
+
+.left-col
+	.autorization
+		position: static
+
+
+
+@import "media" // Always at the end
